@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="93px" height="99px" viewBox="0 0 93 99" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Path-3-+-Rectangle-1-+-Rectangle-1-Copy" sketch:type="MSLayerGroup" transform="translate(-6.000000, 3.000000)" fill="#1D51E5">
+            <path d="M7.20118688,0.0694159899 C24.6549087,0 36.5670837,14.7181452 52.2697627,14.7181452 C67.9724418,14.7181452 81.0490455,7.36371958e-16 99.1499981,0 C99.1499981,12.5422961 99.1500015,98.0615234 99.1500015,98.0615234 L7.20118688,98.0615234 C7.20118688,98.0615234 6.74851641,12.9382606 7.20118688,0.0694159899 Z" id="Path-3" sketch:type="MSShapeGroup"></path>
+            <rect id="Rectangle-1" sketch:type="MSShapeGroup" x="96" y="0" width="13" height="98"></rect>
+            <rect id="Rectangle-1-Copy" sketch:type="MSShapeGroup" x="0" y="0" width="9" height="98"></rect>
+        </g>
+    </g>
+</svg>
