@@ -21,7 +21,8 @@
       background-image: url('images/boat.svg');
       background-size: cover;
       margin: 4em auto 0 auto;
-      animation: boat 5s infinite;
+      animation: boat 5s 100ms infinite;
+      -webkit-animation: boat 5s 100ms ininite;
     }
     .wave {
       position: absolute;
@@ -34,12 +35,14 @@
       height: 99px;
       top: 11em;
       animation: dark-wave 5s infinite;
+      -webkit-animation: dark-wave 5s ininite;
     }
     .light-wave {
       background-image: url('images/light-wave.svg');
       height: 99px;
       top: 13em;
       animation: light-wave 5s infinite;
+      -webkit-animation: dark-wave 5s ininite;
     }
     .water {
       width: 600px;
@@ -59,43 +62,34 @@
       margin: 0 auto;
     }
     @keyframes dark-wave {
-      0% {
-        left: 0;
-        transform:rotate(-1deg);
-      }
-      50% {
-        left: -1em;
-        transform:rotate(1deg);
-      }
-      100% {
-        left: 0;
-        transform:rotate(-1deg);
-      }
+      0% { left: 0; transform:rotate(-1deg); }
+      50% { left: -1em; transform:rotate(1deg); }
+      100% { left: 0; transform:rotate(-1deg); }
+    }
+    @-webkit-keyframes dark-wave {
+      0% { left: 0; transform:rotate(-1deg); }
+      50% { left: -1em; transform:rotate(1deg); }
+      100% { left: 0; transform:rotate(-1deg); }
     }
     @keyframes light-wave {
-      0% {
-        left: -1em;
-        transform:rotate(-1deg);
-      }
-      50% {
-        left: 0;
-        transform:rotate(1deg);
-      }
-      100% {
-        left: -1em;
-        transform:rotate(-1deg);
-      }
+      0% { left: -1em; transform:rotate(-1deg); }
+      50% { left: 0; transform:rotate(1deg); }
+      100% { left: -1em; transform:rotate(-1deg); }
+    }
+    @-webkit-keyframes light-wave {
+      0% { left: -1em; transform:rotate(-1deg); }
+      50% { left: 0; transform:rotate(1deg); }
+      100% { left: -1em; transform:rotate(-1deg); }
     }
     @keyframes boat {
-      0% {
-        transform:rotate(-5deg);
-      }
-      50% {
-        transform:rotate(5deg);
-      }
-      100% {
-        transform:rotate(-5deg);
-      }
+      0% { transform:rotate(-3deg); }
+      50% { transform:rotate(3deg); }
+      100% { transform:rotate(-3deg); }
+    }
+    @-webkit-keyframes boat {
+      0% { transform:rotate(-3deg); }
+      50% { transform:rotate(3deg); }
+      100% { transform:rotate(-3deg); }
     }
   </style>
 </head>
