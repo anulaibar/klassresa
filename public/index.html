@@ -26,6 +26,7 @@
     }
     .wave {
       position: absolute;
+      left: -1em;
       width: 110%;
       background-repeat: repeat-x;
       animation-timing-function: linear;
@@ -45,8 +46,12 @@
       -webkit-animation: dark-wave 5s ininite;
     }
     .water {
+      width: 100%;
+      padding: 2em;
+    }
+    .water-content {
       width: 600px;
-      margin: 3em auto;
+      margin: 0 auto;
     }
     .seabed {
       width: 100%;
@@ -57,39 +62,39 @@
       padding-top: 19em;
       color: White;
     }
-    .footer {
+    .seabed-content {
       width: 600px;
       margin: 0 auto;
     }
     @keyframes dark-wave {
-      0% { left: 0; transform:rotate(-1deg); }
-      50% { left: -1em; transform:rotate(1deg); }
-      100% { left: 0; transform:rotate(-1deg); }
+      0% { transform: rotate(-1deg) translate(1em, 0); }
+      50% { transform: rotate(1deg) translate(0, 0); }
+      100% { transform: rotate(-1deg) translate(1em, 0); }
     }
     @-webkit-keyframes dark-wave {
-      0% { left: 0; transform:rotate(-1deg); }
-      50% { left: -1em; transform:rotate(1deg); }
-      100% { left: 0; transform:rotate(-1deg); }
+      0% { -webkit-transform: rotate(-1deg) translate(1em, 0); }
+      50% { -webkit-transform: rotate(1deg) translate(0, 0); }
+      100% { -webkit-transform: rotate(-1deg) translate(1em, 0); }
     }
     @keyframes light-wave {
-      0% { left: -1em; transform:rotate(-1deg); }
-      50% { left: 0; transform:rotate(1deg); }
-      100% { left: -1em; transform:rotate(-1deg); }
+      0% { transform: rotate(-1deg) translate(-1em, 0); }
+      50% { transform: rotate(1deg) translate(0, 0); }
+      100% { transform: rotate(-1deg) translate(-1em, 0); }
     }
     @-webkit-keyframes light-wave {
-      0% { left: -1em; transform:rotate(-1deg); }
-      50% { left: 0; transform:rotate(1deg); }
-      100% { left: -1em; transform:rotate(-1deg); }
+      0% { -webkit-transform: rotate(-1deg) translate(-1em, 0); }
+      50% { -webkit-transform: rotate(1deg) translate(0, 0); }
+      100% { -webkit-transform: rotate(-1deg) translate(-1em, 0); }
     }
     @keyframes boat {
-      0% { transform:rotate(-3deg); }
-      50% { transform:rotate(3deg); }
-      100% { transform:rotate(-3deg); }
+      0% { transform: rotate(-2deg); }
+      50% { transform: rotate(2deg); }
+      100% { transform: rotate(-2deg); }
     }
     @-webkit-keyframes boat {
-      0% { transform:rotate(-3deg); }
-      50% { transform:rotate(3deg); }
-      100% { transform:rotate(-3deg); }
+      0% { -webkit-transform: rotate(-2deg); }
+      50% { -webkit-transform: rotate(2deg); }
+      100% { -webkit-transform: rotate(-2deg); }
     }
   </style>
 </head>
@@ -98,11 +103,13 @@
 <div class="boat"></div>
 <div class="light-wave wave"></div>
 <div class="water">
-  <h1>Det var en gång en klass som skulle på klassresa...</h1>
-  <iframe width="600" height="358" src="https://www.youtube.com/embed/-usdXbeGHi8" frameborder="0" allowfullscreen></iframe>
+  <div class="water-content">
+    <h1>Det var en gång en klass som skulle på klassresa...</h1>
+    <iframe width="600" height="358" src="https://www.youtube.com/embed/-usdXbeGHi8" frameborder="0" allowfullscreen></iframe>
+  </div>
 </div>
 <div class="seabed">
-  <div class="footer">
+  <div class="seabed-content">
     <h1>Hello</h1>
   </div>
 </div>
