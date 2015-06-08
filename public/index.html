@@ -1,116 +1,153 @@
-<head>
-  <meta charset="UTF-8">
-  <link href='http://fonts.googleapis.com/css?family=Indie+Flower'
-  rel='stylesheet' type='text/css'>
-  <style>
-    body {
-      margin: 0;
-      background-color: #658DFF;
-      font-family: 'Indie Flower', cursive;
-      overflow-x: hidden;
-    }
-    .sky {
-      position: absolute;
-      top: 0;
-      height: 13em;
-      width: 100%;
-      background-color: white;
-    }
-    .boat {
-      width: 368px;
-      height: 214px;
-      background-image: url('images/boat.svg');
-      background-size: cover;
-      margin: 4em auto 0 auto;
-      animation: boat 5s 100ms infinite;
-      -webkit-animation: boat 5s 100ms ininite;
-    }
-    .wave {
-      position: absolute;
-      left: -1em;
-      width: 110%;
-      background-repeat: repeat-x;
-      animation-timing-function: linear;
-    }
-    .dark-wave {
-      background-image: url('images/dark-wave.svg');
-      height: 99px;
-      top: 11em;
-      animation: dark-wave 5s infinite;
-      -webkit-animation: dark-wave 5s ininite;
-    }
-    .light-wave {
-      background-image: url('images/light-wave.svg');
-      height: 99px;
-      top: 13em;
-      animation: light-wave 5s infinite;
-      -webkit-animation: dark-wave 5s ininite;
-    }
-    .water {
-      width: 100%;
-      padding: 2em;
-    }
-    .water-content {
-      width: 600px;
-      margin: 0 auto;
-    }
-    .seabed {
-      width: 100%;
-      height: 8em;
-      background-image: url('images/seabed.svg');
-      background-repeat: repeat-x;
-      background-size: 30em;
-      padding-top: 19em;
-      color: White;
-    }
-    .seabed-content {
-      width: 600px;
-      margin: 0 auto;
-    }
-    @keyframes dark-wave {
-      0% { transform: rotate(-1deg) translate(1em, 0); }
-      50% { transform: rotate(1deg) translate(0, 0); }
-      100% { transform: rotate(-1deg) translate(1em, 0); }
-    }
-    @-webkit-keyframes dark-wave {
-      0% { -webkit-transform: rotate(-1deg) translate(1em, 0); }
-      50% { -webkit-transform: rotate(1deg) translate(0, 0); }
-      100% { -webkit-transform: rotate(-1deg) translate(1em, 0); }
-    }
-    @keyframes light-wave {
-      0% { transform: rotate(-1deg) translate(-1em, 0); }
-      50% { transform: rotate(1deg) translate(0, 0); }
-      100% { transform: rotate(-1deg) translate(-1em, 0); }
-    }
-    @-webkit-keyframes light-wave {
-      0% { -webkit-transform: rotate(-1deg) translate(-1em, 0); }
-      50% { -webkit-transform: rotate(1deg) translate(0, 0); }
-      100% { -webkit-transform: rotate(-1deg) translate(-1em, 0); }
-    }
-    @keyframes boat {
-      0% { transform: rotate(-2deg); }
-      50% { transform: rotate(2deg); }
-      100% { transform: rotate(-2deg); }
-    }
-    @-webkit-keyframes boat {
-      0% { -webkit-transform: rotate(-2deg); }
-      50% { -webkit-transform: rotate(2deg); }
-      100% { -webkit-transform: rotate(-2deg); }
-    }
-  </style>
-</head>
-<div class="sky"></div>
-<div class="dark-wave wave"></div>
-<div class="boat"></div>
-<div class="light-wave wave"></div>
-<div class="water">
-  <div class="water-content">
-    <h1>Det var en gång en klass som skulle på klassresa...</h1>
-    <iframe width="600" height="358" src="https://www.youtube.com/embed/-usdXbeGHi8" frameborder="0" allowfullscreen></iframe>
-  </div>
-</div>
-<div class="seabed">
-  <div class="seabed-content">
-    <h1>Hello</h1>
-  </div>
-</div>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href='http://fonts.googleapis.com/css?family=Indie+Flower'
+    rel='stylesheet' type='text/css'>
+    <script>
+      document.onkeydown = checkKey;
+      function checkKey(e) {
+        e = e || window.event;
+        var boat = document.getElementById('boat');
+        if(boat.style.left == '') {
+          boat.style.left = 0;
+        }
+        if (e.keyCode == '37') { // Left arrow
+          boat.style.left = (parseInt(boat.style.left) - 1) + 'px';
+        }
+        if (e.keyCode == '39') { // Right arrow
+          boat.style.left = (parseInt(boat.style.left) + 1) + 'px';
+        }
+      }
+    </script>
+    <style>
+      body {
+        margin: 0;
+        background-color: #658DFF;
+        font-family: 'Indie Flower', cursive;
+        overflow-x: hidden;
+      }
+      .sky {
+        height: 13em;
+        width: 100%;
+        background-color: white;
+      }
+      .boat {
+        position: absolute;
+        top: 3em;
+        width: 368px;
+        height: 214px;
+        background-image: url('images/boat.svg');
+        background-size: cover;
+        animation: boat 5s 100ms infinite;
+        -webkit-animation: boat 5s 100ms ininite;
+      }
+      .wave {
+        position: absolute;
+        left: -1em;
+        width: 110%;
+        background-repeat: repeat-x;
+        animation-timing-function: linear;
+      }
+      .dark-wave {
+        background-image: url('images/dark-wave.svg');
+        height: 99px;
+        top: 11em;
+        animation: dark-wave 5s infinite;
+        -webkit-animation: dark-wave 5s ininite;
+      }
+      .light-wave {
+        background-image: url('images/light-wave.svg');
+        height: 99px;
+        top: 13em;
+        animation: light-wave 5s infinite;
+        -webkit-animation: dark-wave 5s ininite;
+      }
+      .water {
+        width: 100%;
+      }
+      .water-content {
+        width: 600px;
+        margin: 6em auto;
+      }
+      .seabed {
+        width: 100%;
+        height: 8em;
+        background-image: url('images/seabed.svg');
+        background-repeat: repeat-x;
+        background-size: 30em;
+        padding-top: 19em;
+        color: White;
+      }
+      .seabed-content {
+        width: 600px;
+        margin: 0 auto;
+      }
+      @keyframes dark-wave {
+        0% { transform: rotate(-1deg) translate(1em, 0); }
+        50% { transform: rotate(1deg) translate(0, 0); }
+        100% { transform: rotate(-1deg) translate(1em, 0); }
+      }
+      @-webkit-keyframes dark-wave {
+        0% { -webkit-transform: rotate(-1deg) translate(1em, 0); }
+        50% { -webkit-transform: rotate(1deg) translate(0, 0); }
+        100% { -webkit-transform: rotate(-1deg) translate(1em, 0); }
+      }
+      @keyframes light-wave {
+        0% { transform: rotate(-1deg) translate(-1em, 0); }
+        50% { transform: rotate(1deg) translate(0, 0); }
+        100% { transform: rotate(-1deg) translate(-1em, 0); }
+      }
+      @-webkit-keyframes light-wave {
+        0% { -webkit-transform: rotate(-1deg) translate(-1em, 0); }
+        50% { -webkit-transform: rotate(1deg) translate(0, 0); }
+        100% { -webkit-transform: rotate(-1deg) translate(-1em, 0); }
+      }
+      @keyframes boat {
+        0% { transform: rotate(-2deg); }
+        50% { transform: rotate(2deg); }
+        100% { transform: rotate(-2deg); }
+      }
+      @-webkit-keyframes boat {
+        0% { -webkit-transform: rotate(-2deg); }
+        50% { -webkit-transform: rotate(2deg); }
+        100% { -webkit-transform: rotate(-2deg); }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sky"></div>
+    <div class="dark-wave wave"></div>
+    <div class="boat" id="boat"></div>
+    <div class="light-wave wave"></div>
+    <div class="water">
+      <div class="water-content">
+        <h1>Det var en gång en klass som skulle på klassresa...</h1>
+        <iframe width="600" height="358" 
+          src="https://www.youtube.com/embed/-usdXbeGHi8" frameborder="0" 
+          allowfullscreen></iframe>
+        <h1>...och då kom de till ett landskap fullt av Guld och Gröna skogar!</h1>
+        <iframe width="600" height="358"
+          src="https://www.youtube.com/embed/7fUT-iPlP0I" frameborder="0"
+          allowfullscreen></iframe>
+        <h1>Vi tog väldigt många groupies!</h1>
+        <iframe width="600" height="358"
+          src="https://www.youtube.com/embed/9kqvp-cgH2A" frameborder="0"
+          allowfullscreen></iframe>
+        <h1>Sen åt vi mums-mums... :)</h1>
+        <iframe width="600" height="358"
+          src="https://www.youtube.com/embed/-msutN_OkU4" frameborder="0"
+          allowfullscreen></iframe>
+        <h1>Och sen blev vi jätteförvånade, för mitt i skogen träffade vi Jon-Henrik
+          och hans renar!</h1>
+        <iframe width="600" height="358"
+          src="https://www.youtube.com/embed/3tfvV-5Wq4w" frameborder="0"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="seabed">
+      <div class="seabed-content">
+        <h1>Hello</h1>
+      </div>
+    </div>
+  </body>
+</html>
