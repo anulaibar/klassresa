@@ -4,19 +4,28 @@
     <link href='http://fonts.googleapis.com/css?family=Indie+Flower'
     rel='stylesheet' type='text/css'>
     <script>
-      document.onkeydown = checkKey;
-      function checkKey(e) {
+      document.onkeydown = move;
+      document.onkeyup = stop;
+      var initialSpeed = 3.0;
+      var speed = initialSpeed;
+      var topSpeed = 9.0;
+      function move(e) {
         e = e || window.event;
-        var boat = document.getElementById('boat');
-        if(boat.style.left == '') {
-          boat.style.left = 0;
+        if (e.keyCode == '37' || e.keyCode == '39') {
+          var direction = e.keyCode == '37' ? 1 : -1;
+          var boat = document.getElementById('boat');
+          speed += 0.1;
+          if(speed > topSpeed) {
+            speed = topSpeed;
+          }
+          if(boat.style.left == '') {
+            boat.style.left = 0;
+          }
+          boat.style.left = (parseInt(boat.style.left) - (1 * speed * direction)) + 'px';
         }
-        if (e.keyCode == '37') { // Left arrow
-          boat.style.left = (parseInt(boat.style.left) - 1) + 'px';
-        }
-        if (e.keyCode == '39') { // Right arrow
-          boat.style.left = (parseInt(boat.style.left) + 1) + 'px';
-        }
+      }
+      function stop(e) {
+        speed = initialSpeed;
       }
     </script>
     <style>
@@ -122,9 +131,7 @@
     <div class="water">
       <div class="water-content">
         <h1>Det var en gång en klass som skulle på klassresa...</h1>
-        <iframe width="600" height="358" 
-          src="https://www.youtube.com/embed/-usdXbeGHi8" frameborder="0" 
-          allowfullscreen></iframe>
+        <img src="photos/IMG_0434.JPG" width="600" />
         <h1>...och då kom de till ett landskap fullt av Guld och Gröna skogar!</h1>
         <iframe width="600" height="358"
           src="https://www.youtube.com/embed/7fUT-iPlP0I" frameborder="0"
